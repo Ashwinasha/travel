@@ -1,7 +1,7 @@
 <!-- Newsletter Section -->
 
 
-<section class="newsletter-section pt-4 pt-md-5" style="background-color: pink; margin-bottom: 0; z-index: 2; position: relative;">
+<section class="newsletter-section pt-0" style="background-color: pink; margin-bottom: 0 ; margin-top: 0; z-index: 2; position: relative;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-12 col-11">

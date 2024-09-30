@@ -1,0 +1,30 @@
+
+.newsletter-card {
+    box-shadow: 0px 4px 25px 0px #00000040;
+}
+
+.shadow {
+    box-shadow: 0px -4px 25px 0px #00000040;
+}
+
+.bg-pink {
+    background-color: pink;
+}
+
+.newsletter-section {
+    position: relative;
+}
+
+.newsletter-card {
+    position: absolute;
+    bottom: -100px; /* Adjust this value to control how much the newsletter overlaps */
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+}
+
+footer {
+    z-index: 1;
+}

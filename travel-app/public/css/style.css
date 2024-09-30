@@ -17,7 +17,7 @@
 
 .newsletter-card {
     position: absolute;
-    bottom: -100px; /* Adjust this value to control how much the newsletter overlaps */
+    bottom: -50px; /* Adjust this value to control how much the newsletter overlaps */
     left: 0;
     right: 0;
     margin-left: auto;

@@ -1,0 +1,85 @@
+.contact-section {
+    padding: 50px 0;
+}
+.contact-heading {
+    color: #1a237e;
+    font-weight: bold;
+}
+.contact-form {   
+    padding: 20px;
+    background-color: pink;
+}
+.contact-info {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.contact-section .form-control {
+    margin-bottom: 20px;
+}
+.follow-us {
+    margin-top: 20px;
+}
+.follow-us a {
+    margin-right: 15px;
+    color: #d32f2f;
+    font-size: 24px;
+}
+.send-btn {
+    background-color: #d32f2f;
+    color: white;
+}
+.map-section img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.custom-checkbox {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+}
+.form-check-input {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #aaa;
+}
+.form-check-label {
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.newsletter-card {
+    box-shadow: 0px 4px 25px 0px #00000040;
+}
+
+.shadow {
+    box-shadow: 0px -4px 25px 0px #00000040;
+}
+
+body {
+    background-color: pink;
+}
+
+.newsletter-section {
+    position: relative;
+}
+
+.newsletter-card {
+    position: absolute;
+    bottom: -50px; /* Adjust this value to control how much the newsletter overlaps */
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+}
+
+footer {
+    z-index: 1;
+}

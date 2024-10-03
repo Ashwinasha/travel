@@ -7,17 +7,17 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb bg-transparent p-0 mb-4">
             <li class="breadcrumb-item">
-                <a href="#" class="text-dark text-decoration-none">Slider Management</a>
+                <a href="{{ route('slider_management') }}" class="text-dark text-decoration-none "><b>Slider</b> </a>
             </li>
             <span class="mx-1">&gt;</span>
-            <li class="breadcrumb-item active text-muted" aria-current="page">Add Slider</li>
+            <li class="breadcrumb-item active text-muted" aria-current="page"><b>Add Slider</b></li>
         </ol>
     </nav>
   
     <div class="row justify-content-center mb-5">
         <div class="col-md-8 col-lg-6">
             <div class="card shadow p-4">
-                <form id="slider-form" method="POST" action="#" enctype="multipart/form-data">
+                <form id="slider-form" method="POST" action="{{ route('store_slider') }}" enctype="multipart/form-data">
                     @csrf
 
                     @if(session('success'))
@@ -28,22 +28,25 @@
                         <div class="alert alert-danger mt-3">{{ session('error') }}</div>
                     @endif
 
+                    <label for="slider" class="form-label">Upload image</label>
+
                     <!-- Image upload -->
                     <div class="image-upload-container mb-3 border-dashed d-flex align-items-center justify-content-center position-relative" style="height: 300px; border: 2px dashed black;">
                         <img id="image-preview" alt="Image Preview" class="img-fluid d-none" style="max-width: 100%; max-height: 100%;">
-                        <!-- Only the plus icon triggers the file input -->
-                        <img src="{{ asset('img/icon/plus-solid.svg') }}" id="plus-icon" class="position-absolute" style="max-width:20px; max-height: 20px; cursor: pointer;">
+                        
+                        <!-- Bootstrap Icon for Plus -->
+                        <i id="plus-icon" class="bi bi-plus-lg position-absolute" style="font-size: 2rem; cursor: pointer;"></i>
                         
                         <!-- Keep input file hidden and only clickable via the plus icon -->
                         <input type="file" name="slider_image" id="image-upload" class="d-none" accept="image/*" onchange="previewImage(event)">
                         
-                        <img src="{{ asset('img/icon/trash-can-solid.svg') }}" id="close-btn" class="btn position-absolute top-0 end-0 d-none" style="max-width: 40px; max-height:40px; cursor: pointer;" onclick="removeImage()">
+                        <!-- Bootstrap Icon for Trash (Delete) -->
+                        <i id="close-btn" class="bi bi-trash-fill position-absolute top-0 end-0 d-none" style="font-size: 2rem; cursor: pointer;" onclick="removeImage()"></i>
                     </div>
 
-
                     @error('slider_image')
-                            <div class="invalid-feedback d-block">{{ $message }}</div>
-                        @enderror
+                        <div class="invalid-feedback d-block">{{ $message }}</div>
+                    @enderror
 
                     <!-- Slider Name -->
                     <div class="mb-3 position-relative">
@@ -74,10 +77,8 @@
 
                     <!-- Save Button -->
                     <div class="d-grid text-center justify-content-center">
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-danger">Save</button>
                     </div>
-
-                   
                 </form>
             </div>
         </div>
@@ -114,12 +115,11 @@
                 Unable to add slider. Please try again.
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">OK</button>
             </div>
         </div>
     </div>
 </div>
-
 
 @endsection
 
@@ -131,7 +131,6 @@
 <script src="{{ asset('js/admin/add_slider.js') }}"></script>
 
 <script>
-
 document.addEventListener('DOMContentLoaded', function () {
     const plusIcon = document.getElementById('plus-icon');
     const fileInput = document.getElementById('image-upload');
@@ -173,7 +172,6 @@ document.addEventListener('DOMContentLoaded', function () {
         plusIcon.classList.remove('d-none'); // Show the plus icon again
     };
 
-
     let successMessage = "{{ session('success') }}";
     let errorMessage = "{{ session('error') }}";
 
@@ -187,9 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
         errorModal.show();
     }
-    
 });
-
 </script>
 
 @endsection
